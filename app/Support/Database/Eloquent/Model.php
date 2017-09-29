@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model as BaseModel;
 
 /**
  * Class Model
- * @package Infrastructure\Database\Eloquent
+ * @package MVG\Suport\Database\Eloquent
  */
 abstract class Model extends BaseModel
 {

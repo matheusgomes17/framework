@@ -2,11 +2,13 @@
 
 namespace MVG\Domains\Users\Providers;
 
+use MVG\Domains\Users\Contracts\Repositories\UserRepository as UserRepositoryContract;
 use MVG\Domains\Users\Database\Factories\UserFactory;
 use MVG\Domains\Users\Database\Migrations\CreatePasswordResetsTable;
 use MVG\Domains\Users\Database\Migrations\CreateUsersTable;
 use MVG\Domains\Users\Database\Seeders\UsersSeeder;
 use MVG\Support\Domain\ServiceProvider;
+use MVG\Domains\Users\Repositories\UserRepository;
 
 /**
  * Class DomainServiceProvider
@@ -32,7 +34,7 @@ class DomainServiceProvider extends ServiceProvider
      * @var array Bind contracts to implementations
      */
     protected $bindings = [
-        //
+        UserRepositoryContract::class, UserRepository::class
     ];
     /**
      * @var array Migrations of this domains

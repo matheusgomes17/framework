@@ -4,7 +4,11 @@ namespace MVG\Units\Authentication\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends FormRequest
+/**
+ * Class CreateUserRequest
+ * @package MVG\Units\Authentication\Http\Requests
+ */
+class CreateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

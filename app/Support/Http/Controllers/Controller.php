@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 /**
- * Class Controller
+ * Abstract Class Controller
  * @package MVG\Support\Http\Controllers
  */
 abstract class Controller extends BaseController

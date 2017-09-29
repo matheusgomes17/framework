@@ -65,7 +65,7 @@ abstract class ServiceProvider extends LaravelServiceProvider
     {
         if ($this->hasTranslations) {
             $this->loadTranslationsFrom(
-                $this->unitPath('Resources/Lang'),
+                $this->unitPath('Api/Lang'),
                 $this->alias
             );
         }
@@ -78,7 +78,7 @@ abstract class ServiceProvider extends LaravelServiceProvider
     {
         if ($this->hasViews) {
             $this->loadViewsFrom(
-                $this->unitPath('Resources/Views'),
+                $this->unitPath('Api/Views'),
                 $this->alias
             );
         }

@@ -131,7 +131,7 @@ abstract class ServiceProvider extends LaravelServiceProvider
     protected function registerTranslations()
     {
         $this->loadTranslationsFrom(
-            $this->domainPath('Resources/Lang'),
+            $this->domainPath('Api/Lang'),
             $this->alias
         );
     }
@@ -145,9 +145,11 @@ abstract class ServiceProvider extends LaravelServiceProvider
     {
         $reflection = new ReflectionClass($this);
         $realPath = realpath(dirname($reflection->getFileName()) . '/../');
-        if (!$append) {
+
+        if (! $append) {
             return $realPath;
         }
+
         return $realPath . '/' . $append;
     }
 }
