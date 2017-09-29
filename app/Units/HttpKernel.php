@@ -23,6 +23,7 @@ class HttpKernel extends Kernel
         \MVG\Units\Core\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \MVG\Units\Core\Http\Middleware\TrustProxies::class,
+        \MVG\Units\Core\Http\Middleware\AlwaysExpectsJson::class,
     ];
 
     /**

@@ -2,7 +2,7 @@
 namespace MVG\Domains\Users\Database\Factories;
 
 use MVG\Domains\Users\Models\User;
-use MVG\Support\Domain\ModelFactory;
+use MVG\Support\Database\ModelFactory;
 
 /**
  * Class UserFactory.

@@ -42,7 +42,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        //$this->mapWebRoutes();
     }
 
     /**
@@ -57,7 +57,7 @@ class RouteServiceProvider extends ServiceProvider
         (new Web([
             'middleware' => 'web',
             'namespace'  => $this->namespace,
-            'prefix'     => 'auth',
+            'prefix'     => '',
         ]))->register();
     }
 

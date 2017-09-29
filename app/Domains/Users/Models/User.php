@@ -4,11 +4,14 @@ namespace MVG\Domains\Users\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use MVG\Domains\Users\Notifications\ResetPassword;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+
+    public static $resetPasswordRoute;
 
     /**
      * The attributes that are mass assignable.
@@ -46,5 +49,18 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $link = str_replace('{token}', $token, self::$resetPasswordRoute);
+
+        $this->notify(new ResetPassword($link));
     }
 }

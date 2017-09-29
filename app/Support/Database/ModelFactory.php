@@ -1,6 +1,6 @@
 <?php
 
-namespace MVG\Support\Domain;
+namespace MVG\Support\Database;
 
 use Faker\Generator;
 use Faker\Generator as Faker;
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ModelFactory
- * @package MVG\Support\Domain
+ * @package MVG\Support\Database
  */
 abstract class ModelFactory
 {

@@ -1,7 +1,7 @@
 <?php
 namespace MVG\Domains\Users\Database\Migrations;
 
-use MVG\Support\Domain\Migration;
+use MVG\Support\Database\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
 class CreateUsersTable extends Migration

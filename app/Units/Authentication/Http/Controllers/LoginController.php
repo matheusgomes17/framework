@@ -64,19 +64,16 @@ class LoginController extends Controller
     /**
      * Redirect the user after determining they are locked out.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return void
-     * @throws \Illuminate\Validation\ValidationException
      */
     protected function sendLockoutResponse(Request $request)
     {
         $seconds = $this->limiter()->availableIn(
             $this->throttleKey($request)
         );
-
         $message = Lang::get('auth.throttle', ['seconds' => $seconds]);
 
-        return response()
-            ->json(['error' => $message], Response::HTTP_TOO_MANY_REQUESTS);
+        return response()->json(['message' => $message], Response::HTTP_TOO_MANY_REQUESTS);
     }
 }

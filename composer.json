@@ -27,13 +27,18 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "MVG\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
-            "dont-discover": [
-            ]
+            "providers": [
+                "Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider",
+                "Migrator\\MigrationServiceProvider"
+            ],
+            "aliases": {
+                "JWTAuth": "Tymon\\WTAuth\\Facades\\WTAuth"
+            }
         }
     },
     "scripts": {

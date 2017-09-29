@@ -2,7 +2,7 @@
 
 namespace MVG\Units\Authentication\Http\Controllers;
 
-use Domains\Users\Exceptions\UserException;
+use Exception;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +39,7 @@ class RegisterController extends Controller
     /**
      * Handle a registration request for the application.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  UserRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function register(UserRequest $request)
@@ -50,7 +50,7 @@ class RegisterController extends Controller
 
         try {
             $token = app('tymon.jwt.auth')->fromUser($user);
-        } catch (UserException $e) {
+        } catch (Exception $e) {
             return response()
                 ->json(['error_generating_token'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }

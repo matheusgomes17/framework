@@ -1,12 +1,12 @@
 <?php
 
-namespace MVG\Support\Domain;
+namespace MVG\Support\Database;
 
 use Illuminate\Database\Migrations\Migration as LaravelMigration;
 
 /**
  * Class Migration
- * @package MVG\Support\Domain
+ * @package MVG\Support\Database
  */
 abstract class Migration extends LaravelMigration
 {

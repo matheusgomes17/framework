@@ -22,7 +22,7 @@ class Api extends RouteFile
     {
         $this->loginRoutes();
         $this->signUpRoutes();
-        $this->passwordResetsRoutes();
+        $this->passwordRoutes();
     }
 
     protected function registerV1Routes()
@@ -43,7 +43,7 @@ class Api extends RouteFile
         $this->router->post('register', 'RegisterController@register');
     }
 
-    protected function passwordResetsRoutes()
+    protected function passwordRoutes()
     {
         $this->router->post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
         $this->router->post('password/reset', 'ResetPasswordController@reset');
