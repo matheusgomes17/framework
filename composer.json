@@ -34,11 +34,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider",
-                "Migrator\\MigrationServiceProvider"
+
             ],
             "aliases": {
-                "JWTAuth": "Tymon\\WTAuth\\Facades\\WTAuth"
+
             }
         }
     },

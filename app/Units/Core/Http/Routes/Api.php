@@ -3,7 +3,9 @@
 namespace MVG\Units\Core\Http\Routes;
 
 use Illuminate\Http\Request;
+use MVG\Domains\Users\Models\User;
 use MVG\Support\Http\Routing\RouteFile;
+use MVG\Units\Users\Http\Resources\UserResource;
 
 /**
  * Class Api
@@ -34,7 +36,7 @@ class Api extends RouteFile
     protected function testRoutes()
     {
         $this->router->get('test', function (Request $request) {
-            return $request->user();
-        })->middleware('auth:api');
+            return new UserResource(User::find(11));
+        });
     }
 }

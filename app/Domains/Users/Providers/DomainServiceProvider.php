@@ -2,7 +2,7 @@
 
 namespace MVG\Domains\Users\Providers;
 
-use MVG\Domains\Users\Contracts\Repositories\UserRepository as UserRepositoryContract;
+use MVG\Domains\Users\Contracts\Repositories\UserRepositoryContract;
 use MVG\Domains\Users\Database\Factories\UserFactory;
 use MVG\Domains\Users\Database\Migrations\CreatePasswordResetsTable;
 use MVG\Domains\Users\Database\Migrations\CreateUsersTable;

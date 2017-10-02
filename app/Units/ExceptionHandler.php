@@ -2,16 +2,11 @@
 
 namespace MVG\Units;
 
-use Exception;
 use Illuminate\Auth\AuthenticationException;
-use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Foundation\Exceptions\Handler as LaravelExceptionHandler;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Http\Response;
-use Illuminate\Routing\Router;
 use Illuminate\Validation\ValidationException;
-use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 /**
  * Class ExceptionHandler
@@ -46,7 +41,7 @@ class ExceptionHandler extends LaravelExceptionHandler
      * @param  \Exception $exception
      * @return void
      */
-    public function report(Exception $exception)
+    public function report(\Exception $exception)
     {
         parent::report($exception);
     }
@@ -55,84 +50,119 @@ class ExceptionHandler extends LaravelExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \Exception $e
+     * @param  \Exception $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $e)
+    public function render($request, \Exception $exception)
     {
-        if (method_exists($e, 'render') && $response = $e->render($request)) {
-            return Router::toResponse($request, $response);
-        } elseif ($e instanceof Responsable) {
-            return $e->toResponse($request);
+        if ($request->expectsJson()) {
+            return $this->handleExceptionJsonResponse($request, $exception);
         }
-
-        $e = $this->prepareException($e);
-
-        if ($e instanceof HttpResponseException) {
-            return $e->getResponse();
-        } elseif ($e instanceof AuthenticationException) {
-            return $this->unauthenticated($request, $e);
-        } elseif ($e instanceof ValidationException) {
-            return $this->convertValidationExceptionToResponse($e, $request);
-        }
-
-        return $this->prepareResponse($request, $e);
+        return parent::render($request, $exception);
     }
 
     /**
-     * Prepare response containing exception render.
+     * Handle the JSON response for all the exceptions.
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \Exception $e
-     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @return \Illuminate\Http\Response
      */
-    protected function prepareResponse($request, Exception $e)
+    protected function handleExceptionJsonResponse($request, \Exception $e)
     {
-        if ($this->isHttpException($e)) {
-            return $this->toIlluminateResponse($this->renderHttpException($e), $e);
-        } else {
-            return $this->toIlluminateResponse($this->convertExceptionToResponse($e), $e);
+        // If it's an authentication exception then return a JSON response with status code of 401
+        if ($e instanceof UnauthorizedHttpException) {
+            return $this->handleUnauthorizedHttpException($e);
         }
+
+        // If it's a validation exception then return a JSON response with status code of 422
+        if ($e instanceof ValidationException) {
+            return $this->convertValidationExceptionToResponse($e, $request);
+        }
+
+        // When middlweare auth:api is used
+        // If it's an authentication exception then return a JSON response with status code of 401
+        if ($e instanceof AuthenticationException) {
+            return $this->unauthenticated($request, $e);
+        }
+
+        return $this->makeResponseError($e);
     }
 
     /**
-     * Render the given HttpException.
+     * Handle the JSON response for the UnauthorizedHttpException.
      *
-     * @param  \Symfony\Component\HttpKernel\Exception\HttpException $e
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param UnauthorizedHttpException $e
+     * @return \Illuminate\Http\JsonResponse
      */
-    protected function renderHttpException(HttpException $e)
+    protected function handleUnauthorizedHttpException(UnauthorizedHttpException $e)
     {
-        $status = $e->getStatusCode();
-
-        view()->replaceNamespace('errors', [
-            resource_path('views/errors'),
-            __DIR__ . '/views',
-        ]);
-
-        if (view()->exists("errors::{$status}")) {
-            return response()->view("errors::{$status}", ['exception' => $e], $status, $e->getHeaders());
-        } else {
-            return $this->convertExceptionToResponse($e);
+        if ($this->tokenIsExpired($e)) {
+            return $this->makeResponseError($e, 'token_expired');
         }
+        return $this->makeResponseError($e);
     }
 
     /**
-     * Create a Symfony response for the given exception.
+     * Create and return the error response.
      *
-     * @param  \Exception $e
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param \Exception $e
+     * @param string $reason
+     * @return \Illuminate\Http\JsonResponse
      */
-    protected function convertExceptionToResponse(Exception $e)
+    protected function makeResponseError(\Exception $e, $reason = null)
     {
-        $e = FlattenException::create($e);
+        $code = 500;
 
+        $body = [
+            'messages' => [$e->getMessage()],
+        ];
+
+        // Attribute to complement the error and highlight a specific situation for the client.
+        $body['reason'] = $reason ? $reason : null;
+
+        // If it's a HttpException then use the appropriate HTTP status code instead of 500
+        if ($e instanceof HttpException) {
+            $code = $e->getStatusCode();
+        }
+
+        // If the debugging is on then include the exception trace in the body of the response
         if (config('app.debug')) {
-            $message = $e->getMessage();
-        } else {
-            $message = Response::$statusTexts[$e->getStatusCode()];
+            $body['trace'] = $e->getTrace();
         }
 
-        return response()->json(['message' => $message], $e->getStatusCode());
+        return response()->json($body, $code);
+    }
+
+    /**
+     * Checks if there was an error related to jwt token.
+     *
+     * @param array $headers
+     * @return bool
+     * @internal param array $header
+     */
+    private function hasHeaderWithChallengeJwt(array $headers)
+    {
+        return isset($headers['WWW-Authenticate']) && $headers['WWW-Authenticate'] == 'jwt-auth';
+    }
+
+    private function tokenIsExpired(UnauthorizedHttpException $e)
+    {
+        $headers = $e->getHeaders();
+        $message = $e->getMessage();
+
+        return (bool) $this->hasHeaderWithChallengeJwt($headers) && $this->hasExpiredTokenMessage($message);
+    }
+
+    /**
+     * Checks for expired token message.
+     *
+     * @param string $message
+     * @return bool
+     */
+    private function hasExpiredTokenMessage($message)
+    {
+        return false === ! strpos($message, 'expired');
     }
 }

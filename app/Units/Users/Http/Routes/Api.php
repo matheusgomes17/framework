@@ -32,6 +32,6 @@ class Api extends RouteFile
 
     protected function userRoutes()
     {
-        $this->router->post('user', 'UserController@store');
+        $this->router->resource('user', 'UserController', ['except' => ['create', 'edit']]);
     }
 }
