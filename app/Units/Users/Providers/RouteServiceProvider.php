@@ -3,8 +3,8 @@
 namespace MVG\Units\Users\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use MVG\Units\Authentication\Http\Routes\Api;
-use MVG\Units\Authentication\Http\Routes\Web;
+use MVG\Units\Users\Http\Routes\Api;
+use MVG\Units\Users\Http\Routes\Web;
 
 /**
  * Class RouteServiceProvider

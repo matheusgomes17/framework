@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use MVG\Domains\Users\Models\User;
 use MVG\Support\Http\Controllers\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 /**
  * Class ForgotPasswordController
@@ -67,7 +67,7 @@ class ForgotPasswordController extends Controller
     {
         return response()->json([
             'status' => trans($response)
-        ], Response::HTTP_OK);
+        ], HttpResponse::HTTP_OK);
     }
 
     /**
@@ -81,7 +81,7 @@ class ForgotPasswordController extends Controller
     {
         return response()->json([
             'error' => trans($response)
-        ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        ], HttpResponse::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

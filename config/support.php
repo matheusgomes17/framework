@@ -2,10 +2,4 @@
 
 return [
 
-    'repository' => [
-
-        'fractal' => [
-            'serializer' => null,
-        ],
-    ],
 ];

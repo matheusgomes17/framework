@@ -5,7 +5,7 @@ namespace MVG\Units\Authentication\Http\Controllers;
 use Illuminate\Http\Request;
 use MVG\Support\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 /**
  * Class ResetPasswordController
@@ -79,7 +79,7 @@ class ResetPasswordController extends Controller
         return response()->json([
             'status' => trans($response),
             'token' => $token,
-        ], Response::HTTP_OK);
+        ], HttpResponse::HTTP_OK);
     }
 
     /**
@@ -91,7 +91,6 @@ class ResetPasswordController extends Controller
      */
     protected function sendResetFailedResponse(Request $request, $response)
     {
-        return response()
-            ->json(['error' => trans($response)], Response::HTTP_INTERNAL_SERVER_ERROR);
+        return response()->json(['error' => trans($response)], HttpResponse::HTTP_INTERNAL_SERVER_ERROR);
     }
 }

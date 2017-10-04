@@ -2,16 +2,31 @@
 
 namespace MVG\Domains\Users\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use MVG\Domains\Users\Notifications\ResetPassword;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use MVG\Domains\Users\Models\Traits\SendUserPasswordReset;
+use MVG\Domains\Users\Models\Traits\Attribute\UserAttribute;
+use MVG\Domains\Users\Models\Traits\Relationship\UserRelationship;
+use MVG\Domains\Users\Models\Traits\Scope\UserScope;
 
+/**
+ * Class User
+ * @package MVG\Domains\Users\Models
+ */
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable;
-
-    public static $resetPasswordRoute;
+    use HasRoles,
+        LogsActivity,
+        Notifiable,
+        SendUserPasswordReset,
+        SoftDeletes,
+        UserAttribute,
+        UserRelationship,
+        UserScope;
 
     /**
      * The attributes that are mass assignable.
@@ -19,8 +34,24 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'password', 'active', 'confirmation_code', 'confirmed'
     ];
+
+    /**
+     * The columns that are available to be logged.
+     *
+     * @var array
+     */
+    protected static $logAttributes = [
+        'first_name', 'last_name', 'email', 'active', 'confirmed'
+    ];
+
+    /**
+     * Whether or not to only log the columns that changed.
+     *
+     * @var bool
+     */
+    protected static $logOnlyDirty = true;
 
     /**
      * The attributes that should be hidden for arrays.
@@ -30,6 +61,17 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+
+    /**
+     * The dynamic attributes from mutators that should be returned with the user object.
+     * @var array
+     */
+    protected $appends = ['full_name'];
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
@@ -52,15 +94,24 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
-     * Send the password reset notification.
+     * Can change this to just 'users' if you don't want to be able to differentiate between the types of history.
      *
-     * @param  string  $token
-     * @return void
+     * @param string $eventName
+     *
+     * @return string
      */
-    public function sendPasswordResetNotification($token)
+    public function getLogNameToUse(string $eventName = ''): string
     {
-        $link = str_replace('{token}', $token, self::$resetPasswordRoute);
+        return $this->getTable().'_'.$eventName;
+    }
 
-        $this->notify(new ResetPassword($link));
+    /**
+     * @param string $eventName
+     *
+     * @return string
+     */
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        return ":causer.first_name :causer.last_name has {$eventName} :subject.first_name :subject.last_name";
     }
 }

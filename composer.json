@@ -8,10 +8,19 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.0.0",
+        "arcanedev/log-viewer": "^4.4",
+        "arcanedev/no-captcha": "^5.0",
         "artesaos/migrator": "^1.2",
+        "creativeorange/gravatar": "~1.0",
+        "davejamesmiller/laravel-breadcrumbs": "^4.1",
         "fideloper/proxy": "~3.3",
+        "hieu-le/active": "^3.5",
         "laravel/framework": "5.5.*",
+        "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.5.0",
+        "spatie/laravel-activitylog": "^2.1",
+        "spatie/laravel-permission": "^2.5",
         "tymon/jwt-auth": "~1.0"
     },
     "require-dev": {
@@ -24,7 +33,10 @@
     "autoload": {
         "psr-4": {
             "MVG\\": "app/"
-        }
+        },
+        "files": [
+            "app/Support/Helpers/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -51,6 +63,15 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "clear-all": [
+            "composer dumpautoload -o",
+            "@php artisan optimize",
+            "@php artisan clear-compiled",
+            "@php artisan cache:clear",
+            "@php artisan route:clear",
+            "@php artisan view:clear",
+            "@php artisan config:clear"
         ]
     },
     "config": {

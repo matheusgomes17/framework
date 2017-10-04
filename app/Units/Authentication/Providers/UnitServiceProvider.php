@@ -17,7 +17,7 @@ class UnitServiceProvider extends ServiceProvider
     /**
      * @var bool Enable views loading on the Unity
      */
-    protected $hasViews = true;
+    protected $hasViews = false;
     /**
      * @var bool Enable translations loading on the Unity
      */

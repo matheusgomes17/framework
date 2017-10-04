@@ -13,7 +13,7 @@ abstract class BaseEloquentRepository implements RepositoryContract
 {
     /**
      * Name of model associated with this repository
-     * @var \MVG\Suport\Database\Eloquent\Model
+     * @var \MVG\Support\Database\Eloquent\Model
      */
     protected $model;
     /**

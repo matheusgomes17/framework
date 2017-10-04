@@ -4,7 +4,7 @@ namespace MVG\Units\Authentication\Http\Controllers;
 
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 use Illuminate\Support\Facades\Lang;
 use MVG\Support\Http\Controllers\Controller;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -40,16 +40,14 @@ class LoginController extends Controller
                 // Increments login attempts
                 $this->incrementLoginAttempts($request);
 
-                return response()
-                    ->json(['error' => 'invalid_credentials'], Response::HTTP_UNAUTHORIZED);
+                return response()->json(['error' => 'invalid_credentials'], HttpResponse::HTTP_UNAUTHORIZED);
             }
         } catch (JWTException $e) {
             // Increments login attempts
             $this->incrementLoginAttempts($request);
 
             // something went wrong whilst attempting to encode the token
-            return response()
-                ->json(['error' => 'could_not_create_token'], Response::HTTP_INTERNAL_SERVER_ERROR);
+            return response()->json(['error' => 'could_not_create_token'], HttpResponse::HTTP_INTERNAL_SERVER_ERROR);
         }
 
         // all good so return the token
@@ -65,7 +63,7 @@ class LoginController extends Controller
      * Redirect the user after determining they are locked out.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return void
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     protected function sendLockoutResponse(Request $request)
     {
@@ -74,6 +72,6 @@ class LoginController extends Controller
         );
         $message = Lang::get('auth.throttle', ['seconds' => $seconds]);
 
-        return response()->json(['message' => $message], Response::HTTP_TOO_MANY_REQUESTS);
+        return response()->json(['message' => $message], HttpResponse::HTTP_TOO_MANY_REQUESTS);
     }
 }

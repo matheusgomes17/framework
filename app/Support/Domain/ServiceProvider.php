@@ -131,7 +131,7 @@ abstract class ServiceProvider extends LaravelServiceProvider
     protected function registerTranslations()
     {
         $this->loadTranslationsFrom(
-            $this->domainPath('Api/Lang'),
+            $this->domainPath('Resources/Lang'),
             $this->alias
         );
     }

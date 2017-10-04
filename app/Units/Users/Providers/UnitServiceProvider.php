@@ -13,11 +13,11 @@ class UnitServiceProvider extends ServiceProvider
     /**
      * @var string Unit Alias for Translations and Views
      */
-    protected $alias = 'auth';
+    protected $alias = 'user';
     /**
      * @var bool Enable views loading on the Unity
      */
-    protected $hasViews = true;
+    protected $hasViews = false;
     /**
      * @var bool Enable translations loading on the Unity
      */

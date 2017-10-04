@@ -1,11 +1,13 @@
 <?php
+
 namespace MVG\Domains\Users\Database\Factories;
 
 use MVG\Domains\Users\Models\User;
 use MVG\Support\Database\ModelFactory;
 
 /**
- * Class UserFactory.
+ * Class UserFactory
+ * @package MVG\Domains\Users\Database\Factories
  */
 class UserFactory extends ModelFactory
 {
@@ -14,8 +16,10 @@ class UserFactory extends ModelFactory
     protected function fields()
     {
         static $password;
+
         return [
-            'name' => $this->faker->name,
+            'first_name' => $this->faker->name,
+            'last_name' => $this->faker->name,
             'email' => $this->faker->safeEmail,
             'password' => $password ?: $password = bcrypt('secret'),
             'remember_token' => str_random(10),

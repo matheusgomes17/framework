@@ -168,11 +168,13 @@ return [
          * Domains Service Provider...
          */
         MVG\Domains\Users\Providers\DomainServiceProvider::class,
+        MVG\Domains\Authentication\Providers\DomainServiceProvider::class,
 
         /*
          * Units Service Provider...
          */
         MVG\Units\Core\Providers\UnitServiceProvider::class,
+        MVG\Units\Users\Providers\UnitServiceProvider::class,
         MVG\Units\Authentication\Providers\UnitServiceProvider::class,
 
     ],
@@ -201,7 +203,7 @@ return [
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
         'DB' => Illuminate\Support\Facades\DB::class,
-        'Eloquent' => Illuminate\Database\Eloquent\Model::class,
+        'Repositories' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,

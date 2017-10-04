@@ -23,20 +23,13 @@ class Api extends RouteFile
 
     protected function registerDefaultRoutes()
     {
-        $this->testRoutes();
+        //
     }
 
     protected function registerV1Routes()
     {
         $this->router->group(['prefix' => 'v1'], function () {
             $this->registerDefaultRoutes();
-        });
-    }
-
-    protected function testRoutes()
-    {
-        $this->router->get('test', function (Request $request) {
-            return new UserResource(User::find(11));
         });
     }
 }

@@ -3,8 +3,8 @@
 namespace MVG\Domains\Users\Repositories;
 
 use MVG\Domains\Users\Contracts\Repositories\UserRepositoryContract;
-use MVG\Suport\Database\Eloquent\Model;
 use MVG\Support\Domain\Database\Repository\BaseEloquentRepository;
+use MVG\Support\Domain\Database\Repository\Traits\CacheResults;
 use MVG\Domains\Users\Models\User;
 
 /**
@@ -13,5 +13,10 @@ use MVG\Domains\Users\Models\User;
  */
 class UserRepository extends BaseEloquentRepository implements UserRepositoryContract
 {
+    use CacheResults;
+
+    /**
+     * @var string
+     */
     protected $model = User::class;
 }
