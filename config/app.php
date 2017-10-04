@@ -169,6 +169,7 @@ return [
          */
         MVG\Domains\Users\Providers\DomainServiceProvider::class,
         MVG\Domains\Authentication\Providers\DomainServiceProvider::class,
+        MVG\Domains\ActivityLog\Providers\DomainServiceProvider::class,
 
         /*
          * Units Service Provider...

@@ -1,9 +1,14 @@
 <?php
+
 namespace MVG\Domains\Users\Database\Migrations;
 
 use MVG\Support\Database\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
+/**
+ * Class CreateUsersTable
+ * @package MVG\Domains\Users\Database\Migrations
+ */
 class CreateUsersTable extends Migration
 {
     /**
