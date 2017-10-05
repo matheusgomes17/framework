@@ -23,6 +23,10 @@ class Api extends RouteFile
         $this->loginRoutes();
         $this->signUpRoutes();
         $this->passwordRoutes();
+
+        //$this->router->group(['middleware' => 'role:administrator'], function () {
+            $this->roleRoutes();
+        //});
     }
 
     protected function registerV1Routes()
@@ -48,4 +52,10 @@ class Api extends RouteFile
         $this->router->post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
         $this->router->post('password/reset', 'ResetPasswordController@reset');
     }
+
+    protected function roleRoutes()
+    {
+        $this->router->resource('user/role', 'RoleController', ['except' => ['create', 'edit']]);
+    }
+
 }

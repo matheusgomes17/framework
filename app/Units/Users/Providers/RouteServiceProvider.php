@@ -3,6 +3,7 @@
 namespace MVG\Units\Users\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use MVG\Domains\Users\Models\User;
 use MVG\Units\Users\Http\Routes\Api;
 use MVG\Units\Users\Http\Routes\Web;
 
@@ -28,7 +29,14 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        /*
+         * This allows us to use the Route Model Binding with SoftDeletes on
+         * On a model by model basis
+         */
+        $this->bind('deletedUser', function ($value) {
+            $user = new User;
+            return User::withTrashed()->where($user->getRouteKeyName(), $value)->first();
+        });
 
         parent::boot();
     }

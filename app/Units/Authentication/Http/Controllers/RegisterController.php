@@ -2,9 +2,9 @@
 
 namespace MVG\Units\Authentication\Http\Controllers;
 
+use MVG\Domains\Users\Services\Frontend\RegisterUserService;
 use Symfony\Component\HttpFoundation\Response as HttpResponse;
 use Illuminate\Support\Facades\Auth;
-use MVG\Domains\Authentication\Services\RegisterService;
 use MVG\Support\Http\Controllers\Controller;
 use MVG\Units\Authentication\Http\Requests\CreateUserRequest;
 
@@ -15,11 +15,11 @@ use MVG\Units\Authentication\Http\Requests\CreateUserRequest;
 class RegisterController extends Controller
 {
     /**
-     * @var RegisterService
+     * @var RegisterUserService
      */
     protected $registerService;
 
-    public function __construct(RegisterService $registerService)
+    public function __construct(RegisterUserService $registerService)
     {
         $this->middleware('guest');
         $this->registerService = $registerService;

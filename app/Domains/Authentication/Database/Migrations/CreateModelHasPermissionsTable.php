@@ -1,0 +1,39 @@
+<?php
+
+namespace MVG\Domains\Authentication\Database\Migrations;
+
+use MVG\Support\Database\Migration;
+use Illuminate\Database\Schema\Blueprint;
+
+/**
+ * Class CreateModelHasPermissionsTable
+ * @package MVG\Domains\Authentication\Database\Migrations
+ */
+class CreateModelHasPermissionsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        $this->schema->create(config('permission.table_names.model_has_permissions', 'model_has_permissions'), function (Blueprint $table) {
+            $table->integer(config('permission.foreign_keys.permissions', 'permission_id'))->unsigned();
+            $table->morphs('model');
+
+            $table->foreign(config('permission.foreign_keys.permissions', 'permission_id'))
+                ->references('id')
+                ->on(config('permission.foreign_keys.permissions', 'permissions'))
+                ->onDelete('cascade');
+
+            $table->primary([config('permission.foreign_keys.permissions', 'permission_id'), 'model_id', 'model_type']);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        $this->schema->drop(config('permission.table_names.model_has_permissions', 'model_has_permissions'));
+    }
+}

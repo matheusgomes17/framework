@@ -63,5 +63,7 @@ class HttpKernel extends Kernel
         'guest' => \MVG\Units\Core\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'jwt.auth' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
+        'permission' => \MVG\Units\Authentication\Http\Middleware\PermissionMiddleware::class,
+        'role' => \MVG\Units\Authentication\Http\Middleware\RoleMiddleware::class,
     ];
 }

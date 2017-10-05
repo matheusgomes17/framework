@@ -13,7 +13,7 @@ class CreatePasswordResetsTable extends Migration
 {
     public function up()
     {
-        $this->schema->create(config('user.password_resets.table', 'password_resets'), function (Blueprint $table) {
+        $this->schema->create(config('user.table_names.password_resets', 'password_resets'), function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token')->index();
             $table->timestamp('created_at')->nullable();
@@ -22,6 +22,6 @@ class CreatePasswordResetsTable extends Migration
 
     public function down()
     {
-        $this->schema->drop(config('user.password_resets.table', 'password_resets'));
+        $this->schema->drop(config('user.table_names.password_resets', 'password_resets'));
     }
 }

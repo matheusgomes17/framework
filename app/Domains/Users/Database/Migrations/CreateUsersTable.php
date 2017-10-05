@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        $this->schema->create(config('user.table', 'users'), function (Blueprint $table) {
+        $this->schema->create(config('user.table_names.users', 'users'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
@@ -36,6 +36,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        $this->schema->drop(config('user.table', 'users'));
+        $this->schema->drop(config('user.table_names.users', 'users'));
     }
 }

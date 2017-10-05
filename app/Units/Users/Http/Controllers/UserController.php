@@ -2,12 +2,19 @@
 
 namespace MVG\Units\Users\Http\Controllers;
 
-use MVG\Domains\Users\Services\UserService;
+use MVG\Domains\Users\Models\User;
+use MVG\Domains\Users\Services\AbstractService;
+use MVG\Domains\Users\Services\CreateUserService;
+use MVG\Domains\Users\Services\UpdateUserService;
+use MVG\Domains\Users\Services\DeleteUserService;
 use MVG\Support\Http\Controllers\Controller;
 use MVG\Units\Users\Http\Requests\ManageUserRequest;
 use MVG\Units\Users\Http\Requests\StoreUserRequest;
 use MVG\Units\Users\Http\Requests\UpdateUserRequest;
 use MVG\Units\Users\Http\Resources\UserResource;
+use MVG\Units\Users\Http\Resources\UserStore;
+use MVG\Units\Users\Http\Resources\UserUpdate;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class UserController
@@ -16,68 +23,81 @@ use MVG\Units\Users\Http\Resources\UserResource;
 class UserController extends Controller
 {
     /**
-     * @var UserService
-     */
-    private $userService;
-
-    /**
-     * UserController constructor.
-     * @param UserService $userService
-     */
-    public function __construct(UserService $userService)
-    {
-        $this->userService = $userService;
-    }
-
-    /**
      * @param ManageUserRequest $request
+     * @param AbstractService $service
      * @return UserResource
      */
-    public function index(ManageUserRequest $request)
+    public function index(ManageUserRequest $request, AbstractService $service)
     {
-        $users = $this->userService->paginate();
+        $users = $service->paginate();
 
         return UserResource::collection($users);
     }
 
     /**
      * @param StoreUserRequest $request
+     * @param CreateUserService $service
      * @return UserResource
      */
-    public function store(StoreUserRequest $request)
+    public function store(StoreUserRequest $request, CreateUserService $service)
     {
-        $this->userService->create($request->toArray());
-        $users = $this->userService->paginate();
+        $user = $service->create($request->only(
+            'first_name',
+            'last_name',
+            'email',
+            'password',
+            'active',
+            'confirmed',
+            'confirmation_email',
+            'roles',
+            'permissions'
+        ));
 
-        return UserResource::collection($users);
+        return UserStore::make($user);
     }
 
     /**
-     * @param $id
+     * @param User $user
      * @param ManageUserRequest $request
+     * @param AbstractService $service
      * @return UserResource
      */
-    public function show($id, ManageUserRequest $request)
+    public function show(User $user, ManageUserRequest $request, AbstractService $service)
     {
-        $user = $this->userService->findById($id);
+        $user = $service->findById($user->id);
 
         return UserResource::make($user);
-
     }
 
-
-    public function update($id, UpdateUserRequest $request)
+    /**
+     * @param User $user
+     * @param UpdateUserRequest $request
+     * @param UpdateUserService $service
+     * @return UserResource
+     */
+    public function update(User $user, UpdateUserRequest $request, UpdateUserService $service)
     {
-        $user = $this->userService->update($id, $request->all());
+        $user = $service->update($user->id, $request->only(
+            'first_name',
+            'last_name',
+            'email',
+            'roles',
+            'permissions'
+        ));
 
-        return UserResource::collection($user);
+        return UserUpdate::make($user);
     }
 
-
-    public function destroy($id)
+    /**
+     * @param User $user
+     * @param DeleteUserService $service
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \MVG\Domains\Users\Exceptions\UserException
+     */
+    public function destroy(User $user, DeleteUserService $service)
     {
-        $this->userService->delete($id);
+        $service->delete($user->id);
 
-        return response()->json();
+        return response()->json([], Response::HTTP_NO_CONTENT);
     }
 }

@@ -16,14 +16,18 @@ class CreateSocialAccountsTable extends Migration
      */
     public function up()
     {
-        $this->schema->create(config('user.social_accounts.table', 'social_accounts'), function (Blueprint $table) {
+        $this->schema->create(config('user.table_names.social_accounts', 'social_accounts'), function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer(config('user.foreign_keys.users', 'user_id'))->unsigned();
             $table->string('provider', 32);
             $table->string('provider_id');
             $table->string('token')->nullable();
             $table->string('avatar')->nullable();
+
+            $table->foreign(config('user.foreign_keys.users', 'user_id'))
+                ->references('id')
+                ->on(config('user.table_names.users', 'users'));
+
             $table->timestamps();
         });
     }
@@ -33,6 +37,6 @@ class CreateSocialAccountsTable extends Migration
      */
     public function down()
     {
-        $this->schema->drop(config('user.social_accounts.table', 'social_accounts'));
+        $this->schema->drop(config('user.table_names.social_accounts', 'social_accounts'));
     }
 }

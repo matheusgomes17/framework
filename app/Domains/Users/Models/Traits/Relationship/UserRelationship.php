@@ -2,6 +2,7 @@
 
 namespace MVG\Domains\Users\Models\Traits\Relationship;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use MVG\Domains\Users\Models\SocialAccount;
 
 /**
@@ -13,16 +14,8 @@ trait UserRelationship
     /**
      * @return mixed
      */
-    public function providers()
+    public function providers() : HasMany
     {
         return $this->hasMany(SocialAccount::class);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function sessions()
-    {
-        //return $this->hasMany(Session::class);
     }
 }

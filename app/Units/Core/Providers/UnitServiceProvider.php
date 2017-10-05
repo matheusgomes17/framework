@@ -27,5 +27,6 @@ class UnitServiceProvider extends ServiceProvider
      */
     protected $providers = [
         RouteServiceProvider::class,
+        AppServiceProvider::class,
     ];
 }

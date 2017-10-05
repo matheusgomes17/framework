@@ -4,8 +4,7 @@ namespace MVG\Domains\Users\Providers;
 
 use MVG\Domains\Users\Contracts\Repositories\UserRepositoryContract;
 use MVG\Domains\Users\Database\Factories\UserFactory;
-use MVG\Domains\Users\Database\Migrations\CreatePasswordResetsTable;
-use MVG\Domains\Users\Database\Migrations\CreateUsersTable;
+use MVG\Domains\Users\Database\Migrations;
 use MVG\Domains\Users\Database\Seeders\UsersSeeder;
 use MVG\Support\Domain\ServiceProvider;
 use MVG\Domains\Users\Repositories\UserRepository;
@@ -19,29 +18,26 @@ class DomainServiceProvider extends ServiceProvider
     /**
      * @var string Domain "alias"
      */
-    protected $alias = 'users';
-    /**
-     * @var bool Enable translations
-     */
-    protected $hasTranslations = true;
+    protected $alias = 'user';
     /**
      * @var array Providers registered within the domain
      */
     protected $subProviders = [
-        //EventServiceProvider::class,
+        EventServiceProvider::class,
     ];
     /**
      * @var array Bind contracts to implementations
      */
     protected $bindings = [
-        UserRepositoryContract::class, UserRepository::class
+        UserRepositoryContract::class => UserRepository::class
     ];
     /**
      * @var array Migrations of this domains
      */
     protected $migrations = [
-        CreateUsersTable::class,
-        CreatePasswordResetsTable::class,
+        Migrations\CreateUsersTable::class,
+        Migrations\CreatePasswordResetsTable::class,
+        Migrations\CreateSocialAccountsTable::class
     ];
     /**
      * @var array Some Seeders
