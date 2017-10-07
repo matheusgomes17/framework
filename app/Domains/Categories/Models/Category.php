@@ -3,6 +3,7 @@
 namespace MVG\Domains\Categories\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use MVG\Domains\Authentication\Models\Traits\Scope\TenantModels;
 use MVG\Domains\Categories\Models\Traits\Attribute\CategoryAttribute;
 use MVG\Domains\Categories\Models\Traits\Relationship\CategoryRelationship;
 use MVG\Domains\Categories\Models\Traits\Scope\CategoryScope;
@@ -15,7 +16,8 @@ class Category extends Model
 {
     use CategoryAttribute,
         CategoryRelationship,
-        CategoryScope;
+        CategoryScope,
+        TenantModels;
 
     /**
      * The database table used by the model.
@@ -30,4 +32,5 @@ class Category extends Model
      * @var array
      */
     protected $fillable = ['name', 'description'];
+
 }

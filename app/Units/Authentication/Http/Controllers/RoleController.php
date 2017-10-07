@@ -48,12 +48,13 @@ class RoleController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param Role $role
      * @param ManageRoleRequest $request
      * @param AbstractService $service
      * @return static
      */
-    public function show(Role $role, ManageRoleRequest $request, AbstractService $service)
+    public function show($tenant, Role $role, ManageRoleRequest $request, AbstractService $service)
     {
         $role = $service->findById($role->id);
 
@@ -61,13 +62,14 @@ class RoleController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param Role $role
      * @param UpdateRoleRequest $request
      * @param UpdateRoleService $service
      * @return static
      * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function update(Role $role, UpdateRoleRequest $request, UpdateRoleService $service)
+    public function update($tenant, Role $role, UpdateRoleRequest $request, UpdateRoleService $service)
     {
         $role = $service->update($role->id, $request->only('name', 'permissions'));
 
@@ -75,12 +77,13 @@ class RoleController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param Role $role
      * @param ManageRoleRequest $request
      * @param DeleteRoleService $service
      * @return mixed
      */
-    public function destroy(Role $role, ManageRoleRequest $request, DeleteRoleService $service)
+    public function destroy($tenant, Role $role, ManageRoleRequest $request, DeleteRoleService $service)
     {
         $service->delete($role->id);
 

@@ -53,13 +53,14 @@ class UserStatusController extends Controller
 //    }
 
     /**
+     * @param $tenant
      * @param User $user
      * @param $status
      * @param ManageUserRequest $request
      * @return static
      * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function mark(User $user, $status, ManageUserRequest $request)
+    public function mark($tenant, User $user, $status, ManageUserRequest $request)
     {
         $user = $this->statusService->mark($user, $status);
 
@@ -67,12 +68,13 @@ class UserStatusController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param User $deletedUser
      * @param ManageUserRequest $request
      * @return mixed
      * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function delete(User $deletedUser, ManageUserRequest $request)
+    public function delete($tenant, User $deletedUser, ManageUserRequest $request)
     {
         $this->statusService->forceDelete($deletedUser);
 
@@ -80,12 +82,13 @@ class UserStatusController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param User $deletedUser
      * @param ManageUserRequest $request
      * @return static
      * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function restore(User $deletedUser, ManageUserRequest $request)
+    public function restore($tenant, User $deletedUser, ManageUserRequest $request)
     {
         $user = $this->statusService->restore($deletedUser);
 

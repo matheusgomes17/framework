@@ -3,8 +3,8 @@
 namespace MVG\Units\Categories\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use MVG\Units\Authentication\Http\Routes\Api;
-use MVG\Units\Authentication\Http\Routes\Web;
+use MVG\Units\Categories\Http\Routes\Api;
+use MVG\Units\Categories\Http\Routes\Web;
 
 /**
  * Class RouteServiceProvider
@@ -55,7 +55,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         (new Web([
-            'middleware' => 'web',
+            'middleware' => ['web', 'tenant', 'auth:web'],
             'namespace'  => $this->namespace,
             'prefix'     => '',
         ]))->register();
@@ -71,7 +71,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         (new Api([
-            'middleware' => 'api',
+            'middleware' => ['api', 'tenant', 'auth:api_tenants'],
             'namespace'  => $this->namespace,
             'prefix'     => 'api',
         ]))->register();

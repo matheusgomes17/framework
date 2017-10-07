@@ -25,11 +25,13 @@ class UserConfirmationController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param User $user
      * @param ManageUserRequest $request
      * @return mixed
+     * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function sendConfirmationEmail(User $user, ManageUserRequest $request)
+    public function sendConfirmationEmail($tenant, User $user, ManageUserRequest $request)
     {
         $this->confirmationService->sendConfirmationEmail($user);
 
@@ -37,12 +39,13 @@ class UserConfirmationController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param User $user
      * @param ManageUserRequest $request
-     *
      * @return mixed
+     * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function confirm(User $user, ManageUserRequest $request)
+    public function confirm($tenant, User $user, ManageUserRequest $request)
     {
         $this->confirmationService->confirm($user);
 
@@ -50,12 +53,13 @@ class UserConfirmationController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param User $user
      * @param ManageUserRequest $request
-     *
      * @return mixed
+     * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function unconfirm(User $user, ManageUserRequest $request)
+    public function unconfirm($tenant, User $user, ManageUserRequest $request)
     {
         $this->confirmationService->unconfirm($user);
 

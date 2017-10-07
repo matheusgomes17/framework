@@ -4,6 +4,7 @@ namespace MVG\Domains\Authentication\Providers;
 
 use MVG\Domains\Authentication\Contracts\Repositories\PermissionRepositoryContract;
 use MVG\Domains\Authentication\Contracts\Repositories\RoleRepositoryContract;
+use MVG\Domains\Authentication\Database\Factories\TenantFactory;
 use MVG\Domains\Authentication\Database\Migrations;
 use MVG\Domains\Authentication\Database\Seeders;
 use MVG\Domains\Authentication\Repositories\PermissionRepository;
@@ -40,6 +41,7 @@ class DomainServiceProvider extends ServiceProvider
      * @var array Migrations of this domains
      */
     protected $migrations = [
+        Migrations\CreateTenantsTable::class,
         Migrations\CreatePermissionsTable::class,
         Migrations\CreateRolesTable::class,
         Migrations\CreateModelHasPermissionsTable::class,
@@ -51,6 +53,7 @@ class DomainServiceProvider extends ServiceProvider
      * @var array Some Seeders
      */
     protected $seeders = [
+        Seeders\TenantsTableSeeder::class,
         Seeders\PermissionRoleTableSeeder::class,
         Seeders\UserRoleTableSeeder::class,
     ];
@@ -59,5 +62,6 @@ class DomainServiceProvider extends ServiceProvider
      * @var array Model factories
      */
     protected $factories = [
+        TenantFactory::class
     ];
 }

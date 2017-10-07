@@ -25,12 +25,13 @@ class UserPasswordController extends Controller
     }
 
     /**
-     * @param User                      $user
+     * @param $tenant
+     * @param User $user
      * @param UpdateUserPasswordRequest $request
-     *
      * @return mixed
+     * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function update(User $user, UpdateUserPasswordRequest $request)
+    public function update($tenant, User $user, UpdateUserPasswordRequest $request)
     {
         $this->userPasswordService->updatePassword($user, $request->only('password'));
 

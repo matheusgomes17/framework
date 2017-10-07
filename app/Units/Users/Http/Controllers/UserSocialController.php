@@ -16,6 +16,7 @@ use MVG\Units\Users\Http\Resources\SocialUser;
 class UserSocialController extends Controller
 {
     /**
+     * @param $tenant
      * @param User $user
      * @param SocialAccount $social
      * @param ManageUserRequest $request
@@ -23,7 +24,7 @@ class UserSocialController extends Controller
      * @return static
      * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function unlink(User $user, SocialAccount $social, ManageUserRequest $request, UserSocialService $socialService)
+    public function unlink($tenant, User $user, SocialAccount $social, ManageUserRequest $request, UserSocialService $socialService)
     {
         $user = $socialService->delete($user, $social);
 

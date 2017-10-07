@@ -21,19 +21,19 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->text('description');
 
-//            $table->integer(config('auth.foreign_keys.tenants', 'tenant_id'))->unsigned();
-//            $table->foreign(config('auth.foreign_keys.tenants', 'tenant_id'))
-//                ->references('id')
-//                ->on(config('auth.table_names.tenants', 'tenants'));
+            $table->integer(config('auth.foreign_keys.tenants', 'tenant_id'))->unsigned();
+            $table->foreign(config('auth.foreign_keys.tenants', 'tenant_id'))
+                ->references('id')
+                ->on(config('auth.table_names.tenants', 'tenants'));
 
 //            $table->foreign(config('category.foreign_keys.categories', 'category_id'))
 //                ->references('id')
 //                ->on(config('category.foreign_keys.categories', 'category_id'))
 //                ->onDelete('cascade');
 
-//            $table->primary([
-//                config('auth.foreign_keys.tenants', 'tenant_id'),
-//            ]);
+            $table->primary([
+                config('auth.foreign_keys.tenants', 'tenant_id'),
+            ]);
 
             $table->timestamps();
             $table->softDeletes();

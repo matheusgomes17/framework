@@ -2,16 +2,38 @@
 
 return [
 
+    'models' => [
+        /*
+         * User model
+        */
+        'tenant' => \MVG\Domains\Authentication\Models\Tenant::class,
+    ],
+
     'table_names' => [
         /*
          * Tenants table used to store tenant
          */
         'tenants' => 'tenants',
+
+        /*
+         * Tenants table used to store tenant
+         */
+        'user_tenants' => 'user_tenants',
     ],
 
     'foreign_keys' => [
 
         'tenants' => 'tenant_id',
+    ],
+
+    'tenants' => [
+
+        'field_name' => 'subdomain',
+        'route_param' => 'tenant',
+
+        'subdomains_except' => [
+            'master',
+        ]
     ],
 
     /*
@@ -26,8 +48,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api',
-        'passwords' => 'users',
+        'guard' => 'api_tenants',
+        'passwords' => 'user_tenants',
     ],
 
     /*
@@ -51,6 +73,16 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+
+        'web_tenants' => [
+            'driver' => 'session',
+            'provider' => 'user_tenants'
+        ],
+
+        'api_tenants' => [
+            'driver' => 'jwt',
+            'provider' => 'user_tenants'
         ],
 
         'api' => [
@@ -82,6 +114,11 @@ return [
             'model' => MVG\Domains\Users\Models\User::class,
         ],
 
+        'user_tenants' => [
+            'driver' => 'eloquent',
+            'model' => MVG\Domains\Users\Models\UserTenant::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -106,6 +143,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'user_tenants' => [
+            'provider' => 'user_tenants',
             'table' => 'password_resets',
             'expire' => 60,
         ],

@@ -57,12 +57,13 @@ class UserController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param User $user
      * @param ManageUserRequest $request
      * @param AbstractService $service
-     * @return UserResource
+     * @return static
      */
-    public function show(User $user, ManageUserRequest $request, AbstractService $service)
+    public function show($tenant, User $user, ManageUserRequest $request, AbstractService $service)
     {
         $user = $service->findById($user->id);
 
@@ -70,12 +71,13 @@ class UserController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param User $user
      * @param UpdateUserRequest $request
      * @param UpdateUserService $service
-     * @return UserResource
+     * @return static
      */
-    public function update(User $user, UpdateUserRequest $request, UpdateUserService $service)
+    public function update($tenant, User $user, UpdateUserRequest $request, UpdateUserService $service)
     {
         $user = $service->update($user->id, $request->only(
             'first_name',
@@ -89,12 +91,13 @@ class UserController extends Controller
     }
 
     /**
+     * @param $tenant
      * @param User $user
      * @param DeleteUserService $service
-     * @return \Illuminate\Http\JsonResponse
+     * @return mixed
      * @throws \MVG\Domains\Users\Exceptions\UserException
      */
-    public function destroy(User $user, DeleteUserService $service)
+    public function destroy($tenant, User $user, DeleteUserService $service)
     {
         $service->delete($user->id);
 

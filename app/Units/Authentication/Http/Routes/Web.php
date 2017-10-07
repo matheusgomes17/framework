@@ -20,9 +20,11 @@ class Web extends RouteFile
 
     protected function registerDefaultRoutes()
     {
-        $this->loginRoutes();
-        $this->registerRoutes();
-        $this->passwordResetsRoutes();
+        $this->router->domain('{' . config('auth.tenants.route_param') . '}.' . parse_url(config('app.url'))['host'])->group(function () {
+            $this->loginRoutes();
+            $this->registerRoutes();
+            $this->passwordResetsRoutes();
+        });
     }
 
     protected function loginRoutes()

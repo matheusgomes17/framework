@@ -5,28 +5,28 @@ namespace MVG\Domains\Users\Models;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use MVG\Domains\Users\Models\Traits\Attribute\UserTenantAttribute;
+use MVG\Domains\Users\Models\Traits\Relationship\UserTenantRelationship;
+use MVG\Domains\Users\Models\Traits\Scope\UserTenantScope;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use MVG\Domains\Users\Models\Traits\SendUserPasswordReset;
-use MVG\Domains\Users\Models\Traits\Attribute\UserAttribute;
-use MVG\Domains\Users\Models\Traits\Relationship\UserRelationship;
-use MVG\Domains\Users\Models\Traits\Scope\UserScope;
 
 /**
- * Class User
+ * Class UserTenant
  * @package MVG\Domains\Users\Models
  */
-class User extends Authenticatable implements JWTSubject
+class UserTenant extends Authenticatable implements JWTSubject
 {
     use HasRoles,
         LogsActivity,
         Notifiable,
         SendUserPasswordReset,
         SoftDeletes,
-        UserAttribute,
-        UserRelationship,
-        UserScope;
+        UserTenantAttribute,
+        UserTenantRelationship,
+        UserTenantScope;
 
     protected $guard_name = 'api_tenants';
 

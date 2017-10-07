@@ -23,7 +23,9 @@ class Api extends RouteFile
 
     protected function registerDefaultRoutes()
     {
-        //
+        $this->router->domain('{' . config('auth.tenants.route_param') . '}.' . parse_url(config('app.url'))['host'])->group(function () {
+            //
+        });
     }
 
     protected function registerV1Routes()

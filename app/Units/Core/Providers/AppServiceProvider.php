@@ -5,6 +5,7 @@ namespace MVG\Units\Core\Providers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use MVG\Support\Http\Routing\Redirector;
 
 /**
  * Class AppServiceProvider
@@ -46,6 +47,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->extend('redirect', function ($redirectorOriginal, $app) {
+            $redirector = new Redirector($app['url']);
 
+            if (isset($app['session.store'])) {
+                $redirector->setSession($app['session.store']);
+            }
+
+            return $redirector;
+        });
     }
 }

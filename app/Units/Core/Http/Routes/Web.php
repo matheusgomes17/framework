@@ -15,6 +15,13 @@ class Web extends RouteFile
      */
     public function routes()
     {
-        //
+        $this->registerDefaultRoutes();
+    }
+
+    protected function registerDefaultRoutes()
+    {
+        $this->router->domain('{' . config('auth.tenants.route_param') . '}.' . parse_url(config('app.url'))['host'])->group(function () {
+            //
+        });
     }
 }

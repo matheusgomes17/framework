@@ -20,13 +20,13 @@ class Api extends RouteFile
 
     protected function registerDefaultRoutes()
     {
-        $this->loginRoutes();
-        $this->signUpRoutes();
-        $this->passwordRoutes();
+        $this->router->domain('{' . config('auth.tenants.route_param') . '}.' . parse_url(config('app.url'))['host'])->group(function () {
+            $this->loginRoutes();
+            $this->signUpRoutes();
+            $this->passwordRoutes();
 
-        //$this->router->group(['middleware' => 'role:administrator'], function () {
             $this->roleRoutes();
-        //});
+        });
     }
 
     protected function registerV1Routes()

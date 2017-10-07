@@ -4,7 +4,9 @@
  * Global helpers file with misc functions.
  */
 
-if (! function_exists('app_name')) {
+use MVG\Support\Foundation\Auth\TenantManager;
+
+if (!function_exists('app_name')) {
     /**
      * Helpers to grab the application name.
      *
@@ -16,7 +18,7 @@ if (! function_exists('app_name')) {
     }
 }
 
-if (! function_exists('gravatar')) {
+if (!function_exists('gravatar')) {
     /**
      * Access the gravatar helper.
      */
@@ -26,7 +28,7 @@ if (! function_exists('gravatar')) {
     }
 }
 
-if (! function_exists('includeRouteFiles')) {
+if (!function_exists('includeRouteFiles')) {
     /**
      * Loops through a folder and requires all PHP files
      * Searches sub-directories as well.
@@ -52,21 +54,32 @@ if (! function_exists('includeRouteFiles')) {
     }
 }
 
-if (! function_exists('homeRoute')) {
+if (!function_exists('routeTenant')) {
     /**
-     * Return the route to the "home" page depending on authentication/authorization status.
-     *
+     * @param $name
+     * @param array $params
+     * @param bool|true $absolute
      * @return string
      */
-    function homeRoute()
+    function routeTenant($name, $params = [], $absolute = true)
     {
-        if (auth()->check()) {
-            if (auth()->user()->can('view backend')) {
-                return 'admin.dashboard';
-            } else {
-                return 'frontend.user.dashboard';
-            }
-        }
-        return 'frontend.index';
+        $tenantManager = app(TenantManager::class);
+        $tenantParam = $tenantManager->routeParam();
+
+        return route($name, $params + [
+                config('auth.tenants.route_param') => $tenantParam
+            ], $absolute);
+    }
+}
+if (!function_exists('layoutTenant')) {
+    /**
+     * @return string
+     */
+    function layoutTenant()
+    {
+        $tenantManager = app(TenantManager::class);
+        $isSubdomainExcept = $tenantManager->isSubdomainExcept();
+
+        return !$isSubdomainExcept ? 'layouts.app' : 'layouts.admin';
     }
 }
