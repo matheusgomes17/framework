@@ -19,6 +19,7 @@ class UsersSeeder extends Seeder
         // Add the master administrator, user id of 1
         $users = [
             [
+                'tenant_id'         => 1,
                 'first_name'        => 'Admin',
                 'last_name'         => 'Istrator',
                 'email'             => 'admin@admin.com',
@@ -29,6 +30,7 @@ class UsersSeeder extends Seeder
                 'updated_at'        => Carbon::now(),
             ],
             [
+                'tenant_id'         => 1,
                 'first_name'        => 'Backend',
                 'last_name'         => 'User',
                 'email'             => 'executive@executive.com',
@@ -39,9 +41,21 @@ class UsersSeeder extends Seeder
                 'updated_at'        => Carbon::now(),
             ],
             [
+                'tenant_id'         => 1,
                 'first_name'        => 'Default',
                 'last_name'         => 'User',
                 'email'             => 'user@user.com',
+                'password'          => bcrypt('1234'),
+                'confirmation_code' => md5(uniqid(mt_rand(), true)),
+                'confirmed'         => true,
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ],
+            [
+                'tenant_id'         => 2,
+                'first_name'        => 'Admin',
+                'last_name'         => 'Istrator',
+                'email'             => 'admin@admin.com',
                 'password'          => bcrypt('1234'),
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,

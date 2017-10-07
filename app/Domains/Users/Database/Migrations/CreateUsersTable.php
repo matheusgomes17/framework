@@ -25,6 +25,16 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('active')->default(1)->unsigned();
             $table->string('confirmation_code')->nullable();
             $table->boolean('confirmed')->default(config('user.confirm_email') ? false : true);
+
+//            $table->integer(config('auth.foreign_keys.tenants', 'tenant_id'))->unsigned();
+//            $table->foreign(config('auth.foreign_keys.tenants', 'tenant_id'))
+//                ->references('id')
+//                ->on(config('auth.table_names.tenants', 'tenants'));
+//
+//            $table->primary([
+//                config('auth.foreign_keys.tenants', 'tenant_id')
+//            ]);
+
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

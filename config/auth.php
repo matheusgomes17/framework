@@ -2,6 +2,18 @@
 
 return [
 
+    'table_names' => [
+        /*
+         * Tenants table used to store tenant
+         */
+        'tenants' => 'tenants',
+    ],
+
+    'foreign_keys' => [
+
+        'tenants' => 'tenant_id',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults

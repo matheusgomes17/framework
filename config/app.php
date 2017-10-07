@@ -178,8 +178,14 @@ return [
         /*
          * Domains Service Provider...
          */
+
+
+        /*
+         * Domains Service Provider...
+         */
         MVG\Domains\Users\Providers\DomainServiceProvider::class,
         MVG\Domains\Authentication\Providers\DomainServiceProvider::class,
+        MVG\Domains\Categories\Providers\DomainServiceProvider::class,
         MVG\Domains\ActivityLog\Providers\DomainServiceProvider::class,
 
         /*
@@ -188,6 +194,7 @@ return [
         MVG\Units\Core\Providers\UnitServiceProvider::class,
         MVG\Units\Users\Providers\UnitServiceProvider::class,
         MVG\Units\Authentication\Providers\UnitServiceProvider::class,
+        MVG\Units\Categories\Providers\UnitServiceProvider::class,
 
     ],
 
