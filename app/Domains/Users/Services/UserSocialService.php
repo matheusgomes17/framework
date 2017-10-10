@@ -9,7 +9,7 @@ use MVG\Domains\Users\Models\User;
 
 /**
  * Class UserSocialService
- * @package MVG\Domains\Users\Services
+ *
  */
 class UserSocialService extends AbstractService
 {

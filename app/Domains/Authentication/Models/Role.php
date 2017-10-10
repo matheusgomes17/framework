@@ -7,7 +7,7 @@ use Spatie\Permission\Models\Role as Model;
 
 /**
  * Class Role
- * @package MVG\Domains\Authentication\Models
+ *
  */
 class Role extends Model
 {

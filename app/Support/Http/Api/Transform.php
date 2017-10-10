@@ -12,7 +12,7 @@ use League\Fractal\Resource\Collection as FractalCollection;
 
 /**
  * Class Transform
- * @package MVG\Support\Http\Api
+ *
  */
 class Transform
 {

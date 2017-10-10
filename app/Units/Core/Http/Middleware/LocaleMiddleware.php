@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 /**
  * Class LocaleMiddleware
- * @package MVG\Units\Core\Http\Middleware
+ *
  */
 class LocaleMiddleware
 {

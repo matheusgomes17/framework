@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Global helpers file with misc functions.
- */
-
 use MVG\Support\Foundation\Auth\TenantManager;
 
 if (!function_exists('app_name')) {

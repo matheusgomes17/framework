@@ -9,7 +9,7 @@ use MVG\Units\Users\Http\Resources\UserResource;
 
 /**
  * Class Api
- * @package MVG\Units\Core\Routes
+ *
  */
 class Api extends RouteFile
 {

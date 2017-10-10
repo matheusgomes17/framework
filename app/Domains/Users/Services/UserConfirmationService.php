@@ -11,7 +11,7 @@ use MVG\Domains\Users\Notifications\UserNeedsConfirmation;
 
 /**
  * Class UserConfirmationService
- * @package MVG\Domains\Users\Services
+ *
  */
 class UserConfirmationService extends AbstractService
 {

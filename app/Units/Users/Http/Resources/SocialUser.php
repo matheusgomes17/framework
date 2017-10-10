@@ -4,7 +4,7 @@ namespace MVG\Units\Users\Http\Resources;
 
 /**
  * Class SocialUser
- * @package MVG\Units\Users\Http\Resources
+ *
  */
 class SocialUser extends UserResource
 {

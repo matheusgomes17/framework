@@ -9,7 +9,7 @@ use ReflectionClass;
 
 /**
  * Abstract Class ServiceProvider
- * @package MVG\Support\Domain
+ *
  */
 abstract class ServiceProvider extends LaravelServiceProvider
 {

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class StoreUserRequest
- * @package MVG\Units\Users\Http\Requests
+ *
  */
 class StoreUserRequest extends FormRequest
 {

@@ -9,7 +9,7 @@ use MVG\Support\Domain\Database\Repository\Traits\CacheResults;
 
 /**
  * Class CategoryRepository
- * @package MVG\Domains\Categories\Repositories
+ *
  */
 class CategoryRepository extends BaseEloquentRepository implements CategoryRepositoryContract
 {

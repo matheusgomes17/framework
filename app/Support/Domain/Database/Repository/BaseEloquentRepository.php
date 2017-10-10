@@ -7,7 +7,7 @@ use MVG\Support\Domain\Database\Repository\Traits\ThrowsHttpExceptions;
 
 /**
  * Abstract Class BaseEloquentRepository
- * @package MVG\Support\Domain\Database\Repository
+ *
  */
 abstract class BaseEloquentRepository implements RepositoryContract
 {

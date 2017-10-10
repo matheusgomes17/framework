@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class CreatePasswordResetsTable
- * @package MVG\Domains\Users\Database\Migrations
+ *
  */
 class CreatePasswordResetsTable extends Migration
 {

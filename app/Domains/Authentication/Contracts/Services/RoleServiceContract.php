@@ -4,7 +4,7 @@ namespace MVG\Domains\Authentication\Contracts\Services;
 
 /**
  * Interface RoleServiceContract
- * @package MVG\Domains\Authentication\Contracts\Services
+ *
  */
 interface RoleServiceContract
 {

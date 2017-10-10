@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
 use MVG\Support\Foundation\Auth\TenantManager;
 
+/**
+ * Class TenantScope
+ *
+ */
 class TenantScope implements Scope
 {
     /**

@@ -4,7 +4,7 @@ namespace MVG\Domains\Categories\Listeners;
 
 /**
  * Class CategoryEventListener
- * @package MVG\Domains\Categories\Listeners
+ *
  */
 class CategoryEventListener
 {

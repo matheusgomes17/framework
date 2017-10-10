@@ -10,7 +10,7 @@ use MVG\Domains\Categories\Models\Traits\Scope\CategoryScope;
 
 /**
  * Class Category
- * @package MVG\Domains\Categories\Models
+ *
  */
 class Category extends Model
 {

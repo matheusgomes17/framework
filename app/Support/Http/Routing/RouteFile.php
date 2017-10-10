@@ -6,7 +6,7 @@ use Illuminate\Routing\Router;
 
 /**
  * Class RouteFile
- * @package MVG\Support\Http\Routing
+ *
  */
 abstract class RouteFile
 {

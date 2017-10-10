@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration as LaravelMigration;
 
 /**
  * Class Migration
- * @package MVG\Support\Database
+ *
  */
 abstract class Migration extends LaravelMigration
 {

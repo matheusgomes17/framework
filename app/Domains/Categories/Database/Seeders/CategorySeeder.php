@@ -7,7 +7,7 @@ use MVG\Domains\Categories\Models\Category;
 
 /**
  * Class CategorySeeder
- * @package MVG\Domains\Categories\Database\Seeders
+ *
  */
 class CategorySeeder extends Seeder
 {

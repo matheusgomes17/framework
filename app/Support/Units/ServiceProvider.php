@@ -1,4 +1,5 @@
 <?php
+
 namespace MVG\Support\Units;
 
 use Illuminate\Support\Collection;
@@ -6,7 +7,7 @@ use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 /**
  * Abstract Class ServiceProvider
- * @package MVG\Support\Units
+ *
  */
 abstract class ServiceProvider extends LaravelServiceProvider
 {

@@ -8,7 +8,7 @@ use MVG\Domains\Users\Exceptions\UserException;
 
 /**
  * Class UpdateUserService
- * @package MVG\Domains\Users\Services\Frontend
+ *
  */
 class UpdateUserService extends AbstractService
 {

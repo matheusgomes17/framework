@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class CreateCategoriesTable
- * @package MVG\Domains\Categories\Database\Migrations
+ *
  */
 class CreateCategoriesTable extends Migration
 {

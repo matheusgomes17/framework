@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class UserConfirmationController
- * @package MVG\Units\Users\Http\Controllers
+ *
  */
 class UserConfirmationController extends Controller
 {

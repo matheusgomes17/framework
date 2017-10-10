@@ -9,7 +9,7 @@ use MVG\Domains\Categories\Models\Category;
 
 /**
  * Class CreateCategoryService
- * @package MVG\Domains\Categories\Services
+ *
  */
 class CreateCategoryService extends AbstractService
 {

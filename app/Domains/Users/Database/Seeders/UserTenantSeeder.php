@@ -7,7 +7,7 @@ use MVG\Domains\Users\Models\UserTenant;
 
 /**
  * Class UserTenantSeeder
- * @package MVG\Domains\Users\Database\Seeders
+ *
  */
 class UserTenantSeeder extends Seeder
 {

@@ -10,7 +10,7 @@ use MVG\Domains\Users\Notifications\UserNeedsConfirmation;
 
 /**
  * Class CreateUserService
- * @package MVG\Domains\Users\Services
+ *
  */
 class CreateUserService extends AbstractService
 {

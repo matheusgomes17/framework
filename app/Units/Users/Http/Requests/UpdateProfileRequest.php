@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class UpdateProfileRequest
- * @package MVG\Units\Users\Http\Requests
+ *
  */
 class UpdateProfileRequest extends FormRequest
 {

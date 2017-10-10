@@ -4,7 +4,7 @@ namespace MVG\Domains\Users\Listeners;
 
 /**
  * Class UserEventListener
- * @package MVG\Domains\Users\Listeners
+ *
  */
 class UserEventListener
 {

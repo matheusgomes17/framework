@@ -12,7 +12,7 @@ use MVG\Domains\Users\Models\User;
 
 /**
  * Class RegisterSocialUserService
- * @package MVG\Domains\Users\Services\Frontend
+ *
  */
 class RegisterSocialUserService extends AbstractService
 {

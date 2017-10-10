@@ -9,7 +9,7 @@ use MVG\Domains\Users\Exceptions\UserException;
 
 /**
  * Class DeleteRoleService
- * @package MVG\Domains\Authentication\Services
+ *
  */
 class DeleteRoleService extends AbstractService
 {

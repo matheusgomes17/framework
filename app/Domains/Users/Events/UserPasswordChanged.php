@@ -6,7 +6,7 @@ use Illuminate\Queue\SerializesModels;
 
 /**
  * Class UserPasswordChanged
- * @package MVG\Domains\Users\Events
+ *
  */
 class UserPasswordChanged
 {

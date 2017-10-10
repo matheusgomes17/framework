@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class CreateModelHasRolesTable
- * @package MVG\Domains\Authentication\Database\Migrations
+ *
  */
 class CreateModelHasRolesTable extends Migration
 {

@@ -7,7 +7,7 @@ use Fideloper\Proxy\TrustProxies as Middleware;
 
 /**
  * Class TrustProxies
- * @package MVG\Units\Core\Http\Middleware
+ *
  */
 class TrustProxies extends Middleware
 {

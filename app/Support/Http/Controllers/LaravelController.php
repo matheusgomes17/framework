@@ -11,7 +11,7 @@ use Optimus\Architect\Architect;
 
 /**
  * Class LaravelController
- * @package MVG\Support\Http\Controllers
+ *
  */
 abstract class LaravelController extends Controller
 {

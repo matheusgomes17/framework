@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 /**
  * Class PermissionRoleTableSeeder
- * @package MVG\Domains\Authentication\Database\Seeders
+ *
  */
 class PermissionRoleTableSeeder extends Seeder
 {

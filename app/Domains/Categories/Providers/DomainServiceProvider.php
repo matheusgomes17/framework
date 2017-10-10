@@ -11,7 +11,7 @@ use MVG\Support\Domain\ServiceProvider;
 
 /**
  * Class DomainServiceProvider
- * @package MVG\Domains\Categories\Providers
+ *
  */
 class DomainServiceProvider extends ServiceProvider
 {

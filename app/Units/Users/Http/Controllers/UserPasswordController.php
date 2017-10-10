@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class UserPasswordController
- * @package MVG\Units\Users\Http\Controllers
+ *
  */
 class UserPasswordController extends Controller
 {

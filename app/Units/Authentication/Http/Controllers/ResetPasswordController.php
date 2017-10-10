@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 /**
  * Class ResetPasswordController
- * @package MVG\Units\Authentication\Http\Controllers
+ *
  */
 class ResetPasswordController extends Controller
 {

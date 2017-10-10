@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class ManageUserRequest
- * @package MVG\Units\Users\Http\Requests
+ *
  */
 class ManageUserRequest extends FormRequest
 {

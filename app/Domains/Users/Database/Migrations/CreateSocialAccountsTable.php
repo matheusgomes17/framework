@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class CreateSocialAccountsTable
- * @package MVG\Domains\Users\Database\Migrations
+ *
  */
 class CreateSocialAccountsTable extends Migration
 {

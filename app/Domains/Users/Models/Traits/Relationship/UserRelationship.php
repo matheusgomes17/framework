@@ -7,7 +7,7 @@ use MVG\Domains\Users\Models\SocialAccount;
 
 /**
  * Trait UserRelationship
- * @package MVG\Domains\Users\Models\Traits\Relationship
+ *
  */
 trait UserRelationship
 {

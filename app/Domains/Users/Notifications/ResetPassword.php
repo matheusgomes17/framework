@@ -7,7 +7,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 /**
  * Class ResetPassword
- * @package MVG\Domains\Users\Notifications
+ *
  */
 class ResetPassword extends LaravelResetPassword
 {

@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 /**
  * Abstract Class Controller
- * @package MVG\Support\Http\Controllers
+ *
  */
 abstract class Controller extends BaseController
 {

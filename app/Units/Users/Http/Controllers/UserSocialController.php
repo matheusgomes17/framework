@@ -11,7 +11,7 @@ use MVG\Units\Users\Http\Resources\SocialUser;
 
 /**
  * Class UserSocialController
- * @package MVG\Units\Users\Http\Controllers
+ *
  */
 class UserSocialController extends Controller
 {

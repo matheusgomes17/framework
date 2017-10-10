@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 /**
  * Class ExceptionHandler
- * @package MVG\Units
+ *
  */
 class ExceptionHandler extends LaravelExceptionHandler
 {

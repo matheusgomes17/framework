@@ -12,7 +12,7 @@ use MVG\Domains\Users\Models\User;
 
 /**
  * Class UserStatusService
- * @package MVG\Domains\Users\Services
+ *
  */
 class UserStatusService extends AbstractService
 {

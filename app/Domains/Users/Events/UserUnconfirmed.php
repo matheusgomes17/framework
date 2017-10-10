@@ -6,7 +6,7 @@ use Illuminate\Queue\SerializesModels;
 
 /**
  * Class UserUnconfirmed
- * @package MVG\Domains\Users\Events
+ *
  */
 class UserUnconfirmed
 {

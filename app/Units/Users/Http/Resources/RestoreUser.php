@@ -4,7 +4,7 @@ namespace MVG\Units\Users\Http\Resources;
 
 /**
  * Class RestoreUser
- * @package MVG\Units\Users\Http\Resources
+ *
  */
 class RestoreUser extends UserResource
 {

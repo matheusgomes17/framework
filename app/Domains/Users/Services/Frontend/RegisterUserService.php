@@ -9,7 +9,7 @@ use MVG\Domains\Users\Exceptions\UserException;
 
 /**
  * Class RegisterUserService
- * @package MVG\Domains\Users\Services\Frontend
+ *
  */
 class RegisterUserService extends AbstractService
 {

@@ -7,7 +7,7 @@ use MVG\Units\Authentication\Http\Resources\RoleResource;
 
 /**
  * Class UserResource
- * @package MVG\Units\Users\Http\Resources
+ *
  */
 class UserResource extends Resource
 {

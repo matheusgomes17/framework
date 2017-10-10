@@ -6,7 +6,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * Class ThrowsHttpExceptions
- * @package MVG\Support\Domain\Database\Repository\Traits
+ *
  */
 trait ThrowsHttpExceptions
 {

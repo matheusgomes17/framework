@@ -4,7 +4,7 @@ namespace MVG\Domains\Authentication\Listeners;
 
 /**
  * Class RoleEventListener
- * @package MVG\Domains\Authentication\Listeners
+ *
  */
 class RoleEventListener
 {

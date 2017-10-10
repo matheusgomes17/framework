@@ -6,7 +6,7 @@ use MVG\Domains\Categories\Models\Category;
 
 /**
  * Class DeleteCategoryService
- * @package MVG\Domains\Categories\Services
+ *
  */
 class DeleteCategoryService extends AbstractService
 {

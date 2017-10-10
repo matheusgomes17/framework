@@ -9,7 +9,7 @@ use MVG\Support\Domain\Database\Repository\Traits\CacheResults;
 
 /**
  * Class PermissionRepository
- * @package MVG\Domains\Users\Repositories
+ *
  */
 class PermissionRepository extends BaseEloquentRepository implements PermissionRepositoryContract
 {

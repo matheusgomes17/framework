@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class RoleController
- * @package MVG\Units\Authentication\Http\Controllers
+ *
  */
 class RoleController extends Controller
 {

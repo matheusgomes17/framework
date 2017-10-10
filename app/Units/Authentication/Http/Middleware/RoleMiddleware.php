@@ -5,10 +5,9 @@ namespace MVG\Units\Authentication\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-
 /**
  * Class RoleMiddleware
- * @package MVG\Units\Authentication\Http\Middleware
+ *
  */
 class RoleMiddleware
 {

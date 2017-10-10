@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\Resource;
 
 /**
  * Class RoleResource
- * @package MVG\Units\Authentication\Http\Resources
+ *
  */
 class RoleResource extends Resource
 {

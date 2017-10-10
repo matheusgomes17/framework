@@ -8,7 +8,7 @@ use MVG\Domains\Users\Models\User;
 
 /**
  * Class UserPasswordService
- * @package MVG\Domains\Users\Services
+ *
  */
 class UserPasswordService extends AbstractService
 {

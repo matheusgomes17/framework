@@ -6,7 +6,7 @@ use Illuminate\Queue\SerializesModels;
 
 /**
  * Class UserReactivated
- * @package MVG\Domains\Users\Events
+ *
  */
 class UserReactivated
 {

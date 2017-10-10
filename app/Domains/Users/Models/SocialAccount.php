@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class SocialAccount
- * @package MVG\Domains\Users\Models
+ *
  */
 class SocialAccount extends Model
 {

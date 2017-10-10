@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class CreateUserTenantsTable
- * @package MVG\Domains\Users\Database\Migrations
+ *
  */
 class CreateUserTenantsTable extends Migration
 {

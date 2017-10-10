@@ -9,7 +9,7 @@ use MVG\Domains\Users\Exceptions\UserException;
 
 /**
  * Class CreateRoleService
- * @package MVG\Domains\Authentication\Services
+ *
  */
 class CreateRoleService extends AbstractService
 {

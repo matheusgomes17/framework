@@ -6,7 +6,7 @@ use Illuminate\Queue\SerializesModels;
 
 /**
  * Class RoleUpdated
- * @package MVG\Domains\Authentication\Events
+ *
  */
 class RoleUpdated
 {

@@ -6,7 +6,7 @@ use MVG\Support\Http\Routing\RouteFile;
 
 /**
  * Class Web
- * @package MVG\Units\Categories\Routes
+ *
  */
 class Web extends RouteFile
 {

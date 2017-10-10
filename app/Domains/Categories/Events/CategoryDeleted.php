@@ -6,7 +6,7 @@ use Illuminate\Queue\SerializesModels;
 
 /**
  * Class CategoryDeleted
- * @package MVG\Domains\Categories\Events
+ *
  */
 class CategoryDeleted
 {

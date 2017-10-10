@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ModelFactory
- * @package MVG\Support\Database
+ *
  */
 abstract class ModelFactory
 {

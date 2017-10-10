@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 
 /**
  * Class TenantsTableSeeder
- * @package MVG\Domains\Authentication\Database\Seeders
+ *
  */
 class TenantsTableSeeder extends Seeder
 {

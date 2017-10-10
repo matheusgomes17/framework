@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 /**
  * Class PermissionMiddleware
- * @package MVG\Units\Authentication\Http\Middleware
+ *
  */
 class PermissionMiddleware
 {

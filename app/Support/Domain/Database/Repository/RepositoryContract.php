@@ -4,7 +4,7 @@ namespace MVG\Support\Domain\Database\Repository;
 
 /**
  * Interface RepositoryContract
- * @package MVG\Support\Domain\Database\Repository
+ *
  */
 interface RepositoryContract
 {

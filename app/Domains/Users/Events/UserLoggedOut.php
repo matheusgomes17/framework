@@ -6,7 +6,7 @@ use Illuminate\Queue\SerializesModels;
 
 /**
  * Class UserLoggedOut
- * @package MVG\Domains\Users\Events
+ *
  */
 class UserLoggedOut
 {

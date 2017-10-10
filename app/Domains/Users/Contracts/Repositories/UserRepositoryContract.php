@@ -6,7 +6,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
  * Interface UserRepositoryContract
- * @package MVG\Domains\Users\Contracts\Repositories
+ *
  */
 interface UserRepositoryContract
 {

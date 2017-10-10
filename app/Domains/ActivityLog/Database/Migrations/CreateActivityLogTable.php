@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class CreateActivityLogTable
- * @package MVG\Domains\ActivityLog\Database\Migrations
+ *
  */
 class CreateActivityLogTable extends Migration
 {

@@ -8,7 +8,7 @@ use MVG\Support\Foundation\Auth\TenantManager;
 
 /**
  * Class TenantModels
- * @package MVG\Domains\Authentication\Models\Traits\Scope
+ *
  */
 trait TenantModels
 {

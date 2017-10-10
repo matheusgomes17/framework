@@ -11,7 +11,7 @@ use MVG\Domains\Users\Repositories\UserRepository;
 
 /**
  * Class DomainServiceProvider
- * @package MVG\Domains\Users\Providers
+ *
  */
 class DomainServiceProvider extends ServiceProvider
 {

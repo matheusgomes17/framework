@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 /**
  * Class Parameters
- * @package MVG\Support\Http\Api
+ *
  */
 class Parameters
 {

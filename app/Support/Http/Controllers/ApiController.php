@@ -7,7 +7,7 @@ use MVG\Support\Http\Api\Parameters;
 
 /**
  * Abstract Class ApiController
- * @package MVG\Support\Http\Controllers
+ *
  */
 abstract class ApiController extends Controller
 {

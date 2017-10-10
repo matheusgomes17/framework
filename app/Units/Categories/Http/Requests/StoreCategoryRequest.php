@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class StoreCategoryRequest
- * @package MVG\Units\Categories\Http\Requests
+ *
  */
 class StoreCategoryRequest extends FormRequest
 {

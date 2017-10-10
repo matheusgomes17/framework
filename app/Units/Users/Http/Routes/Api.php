@@ -6,7 +6,7 @@ use MVG\Support\Http\Routing\RouteFile;
 
 /**
  * Class Api
- * @package MVG\Units\Users\Routes
+ *
  */
 class Api extends RouteFile
 {

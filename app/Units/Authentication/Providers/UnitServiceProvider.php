@@ -6,7 +6,7 @@ use MVG\Support\Units\ServiceProvider;
 
 /**
  * Class UnitServiceProvider
- * @package MVG\Units\Authentication\Providers
+ *
  */
 class UnitServiceProvider extends ServiceProvider
 {

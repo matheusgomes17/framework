@@ -4,7 +4,7 @@ namespace MVG\Support\Helpers\Macros\Traits;
 
 /**
  * Class Dropdowns
- * @package MVG\Support\Helpers\Macros\Traits
+ *
  */
 trait Dropdowns
 {

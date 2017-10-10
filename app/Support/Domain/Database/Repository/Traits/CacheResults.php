@@ -4,7 +4,7 @@ namespace MVG\Support\Domain\Database\Repository\Traits;
 
 /**
  * Class CacheResults
- * @package MVG\Support\Domain\Database\Repository\Traits
+ *
  */
 trait CacheResults
 {

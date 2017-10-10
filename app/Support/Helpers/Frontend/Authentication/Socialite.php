@@ -2,7 +2,9 @@
 
 namespace MVG\Support\Helpers\Frontend\Auth;
 
-
+/**
+ * Class Socialite
+ */
 class Socialite
 {
     /**

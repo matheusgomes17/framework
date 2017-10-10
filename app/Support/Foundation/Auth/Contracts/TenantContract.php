@@ -4,7 +4,7 @@ namespace MVG\Support\Foundation\Auth\Contracts;
 
 /**
  * Interface TenantContract
- * @package MVG\Support\Foundation\Auth\Contracts
+ *
  */
 interface TenantContract
 {

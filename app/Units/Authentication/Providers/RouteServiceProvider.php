@@ -8,7 +8,7 @@ use MVG\Units\Authentication\Http\Routes\Web;
 
 /**
  * Class RouteServiceProvider
- * @package MVG\Units\Authentication\Providers
+ *
  */
 class RouteServiceProvider extends ServiceProvider
 {

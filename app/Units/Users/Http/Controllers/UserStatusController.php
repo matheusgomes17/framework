@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class UserStatusController
- * @package MVG\Units\Users\Http\Controllers
+ *
  */
 class UserStatusController extends Controller
 {

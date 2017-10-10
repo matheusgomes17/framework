@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\Kernel;
 
 /**
  * Class HttpKernel
- * @package MVG\Units
+ *
  */
 class HttpKernel extends Kernel
 {

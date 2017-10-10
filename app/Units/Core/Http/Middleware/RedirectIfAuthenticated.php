@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 /**
  * Class RedirectIfAuthenticated
- * @package MVG\Units\Core\Http\Middleware
+ *
  */
 class RedirectIfAuthenticated
 {

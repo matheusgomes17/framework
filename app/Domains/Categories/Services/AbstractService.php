@@ -7,7 +7,7 @@ use MVG\Domains\Users\Contracts\Services\UserServiceContract;
 
 /**
  * Class AbstractService
- * @package MVG\Domains\Categories\Services
+ *
  */
 class AbstractService implements UserServiceContract
 {

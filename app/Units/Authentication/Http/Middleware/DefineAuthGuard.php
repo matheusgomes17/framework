@@ -6,10 +6,9 @@ use Illuminate\Support\Facades\Auth;
 use MVG\Support\Foundation\Auth\TenantManager;
 use Symfony\Component\HttpFoundation\Response;
 
-
 /**
  * Class DefineAuthGuard
- * @package MVG\Units\Authentication\Http\Middleware
+ *
  */
 class DefineAuthGuard
 {

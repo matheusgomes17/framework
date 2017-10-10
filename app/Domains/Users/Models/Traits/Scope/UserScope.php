@@ -4,7 +4,7 @@ namespace MVG\Domains\Users\Models\Traits\Scope;
 
 /**
  * Trait UserScope
- * @package MVG\Domains\Users\Models\Traits\Scope
+ *
  */
 trait UserScope
 {

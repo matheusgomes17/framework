@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 /**
  * Class ForgotPasswordController
- * @package MVG\Units\Authentication\Http\Controllers
+ *
  */
 class ForgotPasswordController extends Controller
 {

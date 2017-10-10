@@ -7,7 +7,7 @@ use Illuminate\Foundation\Console\Kernel;
 
 /**
  * Class ConsoleKernel
- * @package MVG\Units
+ *
  */
 class ConsoleKernel extends Kernel
 {

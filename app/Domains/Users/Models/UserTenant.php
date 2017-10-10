@@ -15,7 +15,7 @@ use MVG\Domains\Users\Models\Traits\SendUserPasswordReset;
 
 /**
  * Class UserTenant
- * @package MVG\Domains\Users\Models
+ *
  */
 class UserTenant extends Authenticatable implements JWTSubject
 {

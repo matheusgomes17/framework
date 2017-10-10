@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class StoreRoleRequest
- * @package MVG\Units\Authentication\Http\Requests
+ *
  */
 class StoreRoleRequest extends FormRequest
 {

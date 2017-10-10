@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class TenantManager
- * @package MVG\Support\Foundation\Auth
+ *
  */
 class TenantManager implements TenantContract
 {

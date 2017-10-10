@@ -12,7 +12,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 /**
  * Class LoginController
- * @package MVG\Units\Authentication\Http\Controllers
+ *
  */
 class LoginController extends Controller
 {

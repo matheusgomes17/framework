@@ -6,7 +6,7 @@ use Illuminate\Queue\SerializesModels;
 
 /**
  * Class CategoryUpdated
- * @package MVG\Domains\Categories\Events
+ *
  */
 class CategoryUpdated
 {

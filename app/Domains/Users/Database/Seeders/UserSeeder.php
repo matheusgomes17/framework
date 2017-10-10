@@ -9,7 +9,7 @@ use MVG\Domains\Users\Models\User;
 
 /**
  * Class UsersSeeder
- * @package MVG\Domains\Users\Database\Seeders
+ *
  */
 class UsersSeeder extends Seeder
 {

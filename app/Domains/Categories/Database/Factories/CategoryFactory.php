@@ -7,7 +7,7 @@ use MVG\Support\Database\ModelFactory;
 
 /**
  * Class CategoryFactory
- * @package MVG\Domains\Categories\Database\Factories
+ *
  */
 class CategoryFactory extends ModelFactory
 {

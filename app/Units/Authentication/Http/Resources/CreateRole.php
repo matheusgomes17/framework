@@ -4,7 +4,7 @@ namespace MVG\Units\Authentication\Http\Resources;
 
 /**
  * Class CreateRole
- * @package MVG\Units\Authentication\Http\Resources
+ *
  */
 class CreateRole extends RoleResource
 {

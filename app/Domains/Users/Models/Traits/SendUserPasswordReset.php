@@ -6,7 +6,7 @@ use MVG\Domains\Users\Notifications\ResetPassword;
 
 /**
  * Trait SendUserPasswordReset
- * @package App\Models\Auth\Traits
+ *
  */
 trait SendUserPasswordReset
 {

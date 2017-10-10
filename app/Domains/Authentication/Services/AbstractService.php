@@ -8,7 +8,7 @@ use MVG\Domains\Authentication\Repositories\RoleRepository;
 
 /**
  * Class AbstractService
- * @package MVG\Domains\Authentication\Services
+ *
  */
 class AbstractService implements RoleServiceContract
 {

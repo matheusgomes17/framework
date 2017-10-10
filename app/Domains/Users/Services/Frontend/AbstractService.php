@@ -6,7 +6,7 @@ use MVG\Domains\Users\Repositories\UserRepository;
 
 /**
  * Class AbstractService
- * @package MVG\Domains\Users\Services\Frontend
+ *
  */
 class AbstractService
 {

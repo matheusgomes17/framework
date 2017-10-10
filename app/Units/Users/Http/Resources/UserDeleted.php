@@ -4,7 +4,7 @@ namespace MVG\Units\Users\Http\Resources;
 
 /**
  * Class UserDeleted
- * @package MVG\Units\Users\Http\Resources
+ *
  */
 class UserDeleted extends UserResource
 {

@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class UserController
- * @package MVG\Units\Users\Http\Controllers
+ *
  */
 class UserController extends Controller
 {

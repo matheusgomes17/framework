@@ -6,7 +6,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 
 /**
  * Class EncryptCookies
- * @package MVG\Units\Core\Http\Middleware
+ *
  */
 class EncryptCookies extends Middleware
 {

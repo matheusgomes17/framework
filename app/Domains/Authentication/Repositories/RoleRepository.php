@@ -9,7 +9,7 @@ use MVG\Support\Domain\Database\Repository\Traits\CacheResults;
 
 /**
  * Class RoleRepository
- * @package MVG\Domains\Authentication\Repositories
+ *
  */
 class RoleRepository extends BaseEloquentRepository implements RoleRepositoryContract
 {

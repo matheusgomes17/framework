@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class UpdateRoleRequest
- * @package MVG\Units\Authentication\Http\Requests
+ *
  */
 class UpdateRoleRequest extends FormRequest
 {

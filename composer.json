@@ -11,8 +11,10 @@
         "arcanedev/log-viewer": "^4.4",
         "arcanedev/no-captcha": "^5.0",
         "artesaos/migrator": "^1.2",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^4.1",
+        "doctrine/dbal": "^2.6",
         "fideloper/proxy": "~3.3",
         "hieu-le/active": "^3.5",
         "laravel/framework": "5.5.*",
@@ -62,6 +64,8 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:meta",
             "@php artisan package:discover"
         ],
         "clear-all": [

@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 /**
  * Class Response
- * @package MVG\Support\Http\Api
+ *
  */
 class Response
 {

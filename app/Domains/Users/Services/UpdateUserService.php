@@ -10,7 +10,7 @@ use MVG\Domains\Users\Models\User;
 
 /**
  * Class UpdateUserService
- * @package MVG\Domains\Users\Services
+ *
  */
 class UpdateUserService extends AbstractService
 {

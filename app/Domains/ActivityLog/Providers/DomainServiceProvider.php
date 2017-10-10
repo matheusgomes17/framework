@@ -7,7 +7,7 @@ use MVG\Support\Domain\ServiceProvider;
 
 /**
  * Class DomainServiceProvider
- * @package MVG\Domains\ActivityLog\Providers
+ *
  */
 class DomainServiceProvider extends ServiceProvider
 {

@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 /**
  * Class UserNeedsConfirmation
- * @package MVG\Domains\Users\Notifications
+ *
  */
 class UserNeedsConfirmation extends Notification
 {

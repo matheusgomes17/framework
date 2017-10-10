@@ -10,7 +10,7 @@ use MVG\Units\Authentication\Http\Requests\CreateUserRequest;
 
 /**
  * Class RegisterController
- * @package MVG\Units\Authentication\Http\Controllers
+ *
  */
 class RegisterController extends Controller
 {

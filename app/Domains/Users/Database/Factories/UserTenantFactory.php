@@ -7,7 +7,7 @@ use MVG\Support\Database\ModelFactory;
 
 /**
  * Class UserTenantFactory
- * @package MVG\Domains\Authentication\Database\Factories
+ *
  */
 class UserTenantFactory extends ModelFactory
 {

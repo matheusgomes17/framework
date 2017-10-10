@@ -13,7 +13,7 @@ use MVG\Support\Domain\ServiceProvider;
 
 /**
  * Class DomainServiceProvider
- * @package MVG\Domains\Authentication\Providers
+ *
  */
 class DomainServiceProvider extends ServiceProvider
 {

@@ -4,7 +4,7 @@ namespace MVG\Domains\Users\Contracts\Services;
 
 /**
  * Interface UserServiceContract
- * @package MVG\Domains\Users\Contracts\Services
+ *
  */
 interface UserServiceContract
 {

@@ -7,7 +7,7 @@ use MVG\Support\Domain\Database\Repository\BaseEloquentRepository;
 
 /**
  * Class SocialRepository
- * @package MVG\Domains\Users\Repositories
+ *
  */
 class SocialRepository extends BaseEloquentRepository implements UserSocialRepositoryContract
 {

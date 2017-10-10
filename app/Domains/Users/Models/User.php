@@ -15,7 +15,7 @@ use MVG\Domains\Users\Models\Traits\Scope\UserScope;
 
 /**
  * Class User
- * @package MVG\Domains\Users\Models
+ *
  */
 class User extends Authenticatable implements JWTSubject
 {

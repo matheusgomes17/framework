@@ -4,7 +4,7 @@ namespace MVG\Units\Users\Http\Resources;
 
 /**
  * Class UserMark
- * @package MVG\Units\Users\Http\Resources
+ *
  */
 class UserMark extends UserResource
 {

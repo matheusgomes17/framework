@@ -10,7 +10,7 @@ use MVG\Domains\Users\Models\User;
 
 /**
  * Class UserRepository
- * @package MVG\Domains\Users\Repositories
+ *
  */
 class UserRepository extends BaseEloquentRepository implements UserRepositoryContract
 {

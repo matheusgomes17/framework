@@ -9,7 +9,7 @@ use MVG\Support\Http\Routing\Redirector;
 
 /**
  * Class AppServiceProvider
- * @package MVG\Units\Core\Providers
+ *
  */
 class AppServiceProvider extends ServiceProvider
 {

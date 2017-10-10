@@ -7,7 +7,7 @@ use MVG\Support\Helpers\Macros\Traits\Dropdowns;
 
 /**
  * Class Macros
- * @package MVG\Support\Helpers\Macros
+ *
  */
 class Macros extends FormBuilder
 {

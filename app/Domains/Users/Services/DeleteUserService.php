@@ -8,7 +8,7 @@ use MVG\Domains\Users\Models\User;
 
 /**
  * Class DeleteUserService
- * @package MVG\Domains\Users\Services
+ *
  */
 class DeleteUserService extends AbstractService
 {

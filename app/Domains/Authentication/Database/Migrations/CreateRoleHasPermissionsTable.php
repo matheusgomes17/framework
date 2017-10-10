@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 /**
  * Class CreateRoleHasPermissionsTable
- * @package MVG\Domains\Authentication\Database\Migrations
+ *
  */
 class CreateRoleHasPermissionsTable extends Migration
 {

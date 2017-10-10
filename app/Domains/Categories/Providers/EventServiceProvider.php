@@ -6,7 +6,7 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 
 /**
  * Class EventServiceProvider
- * @package MVG\Domains\Categories\Providers
+ *
  */
 class EventServiceProvider extends ServiceProvider
 {
