@@ -1,5 +1,8 @@
-import Main from '../components/Main.vue'
+import { routes as app } from '../modules/app'
+import { routes as auth } from '../modules/auth'
 
-export default [
-    { path: '/', component: Main }
+const root = [
+    {path: '/', redirect: '/app'}
 ]
+
+export default [...root, ...app, ...auth]
