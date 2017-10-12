@@ -3,30 +3,26 @@
     <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar">
         <div class="container">
 
-            <a class="navbar-brand" href="#">
-                <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="">
-            </a>
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <router-link to="/" class="navbar-brand">
+                    <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="">
+                </router-link>
+            </div>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><i class="fa fa-envelope"></i> Contact <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-gear"></i> Settings</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
-                            <a class="dropdown-item" href="#">My account</a>
-                            <a class="dropdown-item" href="#">Log out</a>
-                        </div>
-                    </li>
+                    <router-link :to="{ name: 'app.home' }" tag="li" exact class="nav-item">
+                        <a class="nav-link"><i class="fa fa-home"></i> Início</a>
+                    </router-link>
+
+                    <router-link :to="{ name: 'app.contact' }" tag="li" class="nav-item">
+                        <a class="nav-link"><i class="fa fa-envelope"></i> Contato</a>
+                    </router-link>
                 </ul>
             </div>
 
@@ -36,9 +32,7 @@
 </template>
 
 <script>
-export default {
-
-}
+    export default {}
 </script><!-- Template styles -->
 
 <style>
@@ -84,12 +78,15 @@ export default {
     .list-group-item:not(.active):hover {
         color: #666;
     }
+
     .card {
         font-weight: 300;
     }
+
     .navbar .btn-group .dropdown-menu a:hover {
         color: #000 !important;
     }
+
     .navbar .btn-group .dropdown-menu a:active {
         color: #fff !important;
     }
