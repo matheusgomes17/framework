@@ -28,7 +28,7 @@ class User extends Authenticatable implements JWTSubject
         UserRelationship,
         UserScope;
 
-    protected $guard_name = 'api_tenants';
+    protected $guard_name = 'web_tenants';
 
     /**
      * The attributes that are mass assignable.

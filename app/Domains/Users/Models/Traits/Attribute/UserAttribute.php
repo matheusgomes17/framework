@@ -75,19 +75,6 @@ trait UserAttribute
     }
 
     /**
-     * @param bool $size
-     *
-     * @return mixed
-     */
-    public function getPicture($size = false)
-    {
-        if (!$size) {
-            $size = config('user.gravatar.default.size');
-        }
-        return gravatar()->get($this->email, ['size' => $size]);
-    }
-
-    /**
      * @param $provider
      *
      * @return bool

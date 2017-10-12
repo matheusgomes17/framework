@@ -64,7 +64,7 @@ class HttpKernel extends Kernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'jwt.auth' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
         'tenant' => \MVG\Units\Authentication\Http\Middleware\DefineAuthGuard::class,
-        'permission' => \MVG\Units\Authentication\Http\Middleware\PermissionMiddleware::class,
-        'role' => \MVG\Units\Authentication\Http\Middleware\RoleMiddleware::class,
+        //'permission' => \MVG\Units\Authentication\Http\Middleware\PermissionMiddleware::class,
+        //'role' => \MVG\Units\Authentication\Http\Middleware\RoleMiddleware::class,
     ];
 }

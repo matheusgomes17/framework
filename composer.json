@@ -12,7 +12,6 @@
         "arcanedev/no-captcha": "^5.0",
         "artesaos/migrator": "^1.2",
         "barryvdh/laravel-ide-helper": "^2.4",
-        "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^4.1",
         "doctrine/dbal": "^2.6",
         "fideloper/proxy": "~3.3",
@@ -23,7 +22,8 @@
         "laravelcollective/html": "^5.5.0",
         "spatie/laravel-activitylog": "^2.1",
         "spatie/laravel-permission": "^2.5",
-        "tymon/jwt-auth": "~1.0"
+        "tymon/jwt-auth": "~1.0",
+        "vinkla/hashids": "^3.3"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

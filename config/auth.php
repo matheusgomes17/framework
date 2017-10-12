@@ -48,8 +48,10 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api_tenants',
-        'passwords' => 'user_tenants',
+        'guard' => 'web',
+        'passwords' => 'users',
+//        'guard' => 'web_tenants',
+//        'passwords' => 'user_tenants',
     ],
 
     /*
