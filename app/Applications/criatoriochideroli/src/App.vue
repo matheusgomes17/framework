@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <RootHeader></RootHeader>
+    <MenuTop />
     <div class="container">
       <router-view></router-view>
     </div>
@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import RootHeader from './components/root/header.vue'
+import MenuTop from './components/layout/navbar/MenuTop.vue'
 
 export default {
-  components: { RootHeader }
+  components: { MenuTop }
 }
 </script>
 
